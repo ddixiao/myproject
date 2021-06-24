@@ -82,7 +82,7 @@ if PythonAnywhere is False:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'XXXXX',
+            'NAME': 'XXXXXX',
             'USER': 'root',
             'PASSWORD': '******',
             'HOST': 'localhost',
