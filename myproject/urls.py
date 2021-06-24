@@ -1,26 +1,25 @@
+"""myproject URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/3.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
 from django.contrib import admin
 from myapp import views
 from django.urls import path,include
 from django.conf.urls.static import static
 from django.conf import settings
 
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.contrib import staticfiles
-
 urlpatterns = [
-    path('',views.title),
-    path('uploadimg',views.uploadimg),
-    path('show',views.showimg),
-    path("project1",views.Project1),
-    path("1",views.Project1),
-    path("project2",views.Project2),
-    path("2",views.Project2),
-    path("project3",views.Project3),
-    path("3",views.Project3),
-    path("project4",views.Project4),
-    path("4",views.Project4),
-    #url(r'^static/(?P<path>.*)', 'django.views.static.serve', {'document_root':'/home/anna/Documents/django_py/showImg/static'})
-]
-
-urlpatterns += staticfiles_urlpatterns()
-
+    path('admin/', admin.site.urls),
+    path('',include('myapp.urls')),    
+] 
